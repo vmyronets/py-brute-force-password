@@ -40,7 +40,7 @@ def brute_force_password(start: int, end: int, target_hashes: set) -> dict:
 
 def main() -> None:
     target_hashes = set(PASSWORDS_TO_BRUTE_FORCE)
-    cpu_cores = os.cpu_count() - 1
+    cpu_cores = max(1, os.cpu_count() - 1)
     total_space = 100_000_000
     chunk_size = total_space // cpu_cores
 
