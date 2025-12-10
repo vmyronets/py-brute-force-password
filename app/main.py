@@ -26,7 +26,7 @@ def brute_force_password(start: int, end: int, target_hashes: set) -> dict:
     found = {}
 
     for i in range(start, end):
-        passwd = f"{i: 08d}"
+        passwd = f"{i:08d}"
         passwd_hash = sha256_hash_str(passwd)
 
         if passwd_hash in target_hashes:
